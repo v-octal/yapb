@@ -1,0 +1,17 @@
+.custom-navbar-formatting {
+  background-color: white;
+  max-width: 60rem;
+  margin: auto;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .custom-navbar-formatting {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-navbar-formatting {
+    padding-top: 2.5rem;
+  }
+}

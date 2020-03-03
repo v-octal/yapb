@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { rhythm, scale } from "../utils/typography"
-import CustomNavbar from "./navbar"
+import CustomNavbar from "./navbar/navbar"
 
 class Layout extends React.Component {
   render() {
