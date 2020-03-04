@@ -1,17 +1,47 @@
-.custom-navbar-formatting {
+.yapb-navbar {
   background-color: white;
   max-width: 60rem;
   margin: auto;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-  .custom-navbar-formatting {
+  .yapb-navbar {
     padding-top: 0.5rem;
   }
 }
 
 @media (min-width: 768px) {
-  .custom-navbar-formatting {
+  .yapb-navbar {
     padding-top: 2.5rem;
   }
+}
+
+.yapb-navbar-element {
+  color: #000;
+  margin: 0.15em 0.75em;
+  font-size: large;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+a.yapb-navbar-element {
+  position: relative;
+}
+
+a.yapb-navbar-element:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a.yapb-navbar-element:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
