@@ -1,0 +1,13 @@
+.yapb-blog-list {
+  margin: 20px 0 40px;
+}
+
+a.yapb-blog-list {
+  text-decoration: none;
+}
+
+@media (min-width: 576px) {
+  .yapb-blog-list .card-columns {
+    column-count: 2;
+  }
+}
