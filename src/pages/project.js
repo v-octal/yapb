@@ -25,7 +25,7 @@ class Project extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={`blog${node.fields.slug}`}>
+              <Link to={`project${node.fields.slug}`}>
                 <Card bg={cardBackground} text={cardTextColor}>
                   <Card.Header as="h5">{title}</Card.Header>
                   <Card.Body>
