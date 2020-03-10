@@ -16,6 +16,9 @@ class Blog extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
 
+    const cardBackground = "light"
+    const cardTextColor = "dark"
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
@@ -26,8 +29,8 @@ class Blog extends React.Component {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <Link to={`blog${node.fields.slug}`}>
-                  <Card border="secondary">
-                    <Card.Header as='h5'>{title}</Card.Header>
+                  <Card bg={cardBackground} text={cardTextColor}>
+                    <Card.Header as="h5">{title}</Card.Header>
                     <Card.Body>
                       <Card.Text>
                         {node.frontmatter.description || node.excerpt}
@@ -59,7 +62,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, filter: {frontmatter: {layout: {eq: "blog"}}}) {
       edges {
         node {
           excerpt
