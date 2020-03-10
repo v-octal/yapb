@@ -13,7 +13,7 @@ const CustomNavbar = () => (
       <Nav>
         <Link to="/blog/" className="yapb-navbar-element">Blog</Link>
         <Link to="/project/" className="yapb-navbar-element">Project</Link>
-        <Link to="/book/" className="yapb-navbar-element">Book</Link>
+        <Link to="/review/" className="yapb-navbar-element">Review</Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
