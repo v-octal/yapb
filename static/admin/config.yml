@@ -10,10 +10,12 @@ collections:
     folder: content/blog
     create: true
     fields:
+      - { label: layout, name: layout, widget: hidden, default: "blog"}
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
+      - { name: tags, label: Tags , widget: list}
       - { name: body, label: Body, widget: markdown }
 
   - name: project
@@ -21,19 +23,21 @@ collections:
     folder: content/project
     create: true
     fields:
+      - { label: layout, name: layout, widget: hidden, default: "project"}
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
-      - { name: tags, label: Tags }
+      - { name: tags, label: Tags , widget: list}
       - { name: body, label: Body, widget: markdown }
 
-  - name: book
-    label: Book
-    folder: content/book
+  - name: review
+    label: Review
+    folder: content/review
     create: true
     fields:
+      - { label: layout, name: layout, widget: hidden, default: "review"}
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
-      - { name: genre, label: Genre }
+      - { name: type, label: Type }
       - { name: body, label: Body, widget: markdown }
