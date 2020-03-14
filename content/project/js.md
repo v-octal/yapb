@@ -1,8 +1,10 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+title: JS
+date: "2020-01-01"
 layout: project
 ---
+Hello world in Javascript!
+
 
 ```js
 function helloWorld() {
