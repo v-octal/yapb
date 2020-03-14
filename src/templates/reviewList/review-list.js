@@ -72,7 +72,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { layout: { eq: "blog" } } }
+      filter: { frontmatter: { layout: { eq: "review" } } }
       limit: $limit
       skip: $skip
     ) {
