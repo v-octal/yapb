@@ -54,6 +54,43 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+
+      const layoutMapping = {
+        blog: {
+          postsPerPage: 2,
+          component: "./src/templates/blogList/blog-list.js",
+        },
+        project: {
+          postsPerPage: 2,
+          component: "./src/templates/projectList/project-list.js",
+        },
+        review: {
+          postsPerPage: 2,
+          component: "./src/templates/reviewList/review-list.js",
+        },
+      }
+
+      const postsPerPage =
+        layoutMapping[posts[0].node.frontmatter.layout].postsPerPage
+      const listComponent =
+        layoutMapping[posts[0].node.frontmatter.layout].component
+      const numPages = Math.ceil(posts.length / postsPerPage)
+
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path:
+            i === 0
+              ? `/${posts[0].node.frontmatter.layout}/`
+              : `/${posts[0].node.frontmatter.layout}/${i + 1}`,
+          component: path.resolve(listComponent),
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+          },
+        })
+      })
     })
 
     return null
