@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { rhythm, scale } from "../utils/typography"
 import YapbNavbar from "./navbar/navbar"
+import YapbFooter from "./footer/footer"
 
 class Layout extends React.Component {
   render() {
@@ -55,25 +56,23 @@ class Layout extends React.Component {
       )
     }
     return (
-      <Wrapper>
-        <YapbNavbar></YapbNavbar>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            marginTop: `5em`,
-            maxWidth: rhythm(30),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <header>{header}</header>
-          <main>{children}</main>
+      <Wrapper className="flexbox-wrapper">
+        <div className="yapb-content">
+          <YapbNavbar></YapbNavbar>
+          <div
+            style={{
+              marginLeft: `auto`,
+              marginRight: `auto`,
+              marginTop: `5em`,
+              maxWidth: rhythm(30),
+              padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            }}
+          >
+            <header>{header}</header>
+            <main>{children}</main>
+          </div>
         </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
+        <YapbFooter></YapbFooter>
       </Wrapper>
     )
   }

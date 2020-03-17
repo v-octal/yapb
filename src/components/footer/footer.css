@@ -1,0 +1,37 @@
+.yapb-footer {
+  flex: none;
+}
+
+.flexbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.yapb-content {
+  flex: 1 0 auto;
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+}
+.yapb-content::after {
+  content: "\00a0";
+  display: block;
+  margin-top: var(--space);
+  height: 0px;
+  visibility: hidden;
+}
+@media (--break-lg) {
+  .yapb-content {
+    padding-top: var(--space-lg);
+  }
+  .yapb-content::after {
+    margin-top: var(--space-lg);
+  }
+}
+
+.yapb-content--full {
+  padding: 0;
+}
+.yapb-content--full::after {
+  content: none;
+}
