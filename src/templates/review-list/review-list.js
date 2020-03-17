@@ -5,9 +5,9 @@ import { Card, CardColumns } from "react-bootstrap"
 import SEO from "../../components/seo"
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
-import PaginationComponent from "../../components/pagination-component/pagination-component"
+import YapbPagination from "../../components/pagination/pagination"
 
-class ProjectList extends React.Component {
+class ReviewList extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -25,27 +25,29 @@ class ProjectList extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
-        <CardColumns>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <Link to={`project${node.fields.slug}`}>
-                <Card bg={cardBackground} text={cardTextColor}>
-                  <Card.Header as="h5">{title}</Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      {node.frontmatter.description || node.excerpt}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small>{node.frontmatter.date}</small>
-                  </Card.Footer>
-                </Card>
-              </Link>
-            )
-          })}
-        </CardColumns>
-        <PaginationComponent
+        <div className="yapb-review-list">
+          <CardColumns>
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <Link to={`review${node.fields.slug}`}>
+                  <Card bg={cardBackground} text={cardTextColor}>
+                    <Card.Header as="h5">{title}</Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        {node.frontmatter.description || node.excerpt}
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small>{node.frontmatter.date}</small>
+                    </Card.Footer>
+                  </Card>
+                </Link>
+              )
+            })}
+          </CardColumns>
+        </div>
+        <YapbPagination
           isFirst={isFirst}
           isLast={isLast}
           prevPage={prevPage}
@@ -53,16 +55,16 @@ class ProjectList extends React.Component {
           numPages={numPages}
           currentPage={currentPage}
           layout={posts[0].node.frontmatter.layout}
-        ></PaginationComponent>
+        ></YapbPagination>
       </Layout>
     )
   }
 }
 
-export default ProjectList
+export default ReviewList
 
 export const pageQuery = graphql`
-  query projectPageQuery($skip: Int!, $limit: Int!) {
+  query reviewPageQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -70,7 +72,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { layout: { eq: "project" } } }
+      filter: { frontmatter: { layout: { eq: "review" } } }
       limit: $limit
       skip: $skip
     ) {

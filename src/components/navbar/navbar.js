@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import "./navbar.css"
 
-const CustomNavbar = () => (
+const YapbNavbar = () => (
   <Navbar collapseOnSelect expand="lg" fixed="top" variant="light" className="yapb-navbar">
     <Link to="/" className="yapb-navbar-element">React-Bootstrap</Link>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -19,4 +19,4 @@ const CustomNavbar = () => (
   </Navbar>
 )
 
-export default CustomNavbar
+export default YapbNavbar

@@ -6,7 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import ReadingTime from "../components/readingTime"
+import ReadingTime from "../components/reading-time"
 
 class PostTemplate extends React.Component {
   render() {

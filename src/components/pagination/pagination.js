@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "./pagination-component.css"
+import "./pagination.css"
 
-const PaginationComponent = props => {
+const YapbPagination = props => {
   let items = []
   for (let i = 1; i <= props.numPages; i++) {
     const currPage = i === 1 ? "" : i
@@ -52,4 +52,4 @@ const PaginationComponent = props => {
   )
 }
 
-export default PaginationComponent
+export default YapbPagination

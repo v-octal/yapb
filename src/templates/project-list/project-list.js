@@ -5,11 +5,9 @@ import { Card, CardColumns } from "react-bootstrap"
 import SEO from "../../components/seo"
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
-import PaginationComponent from "../../components/pagination-component/pagination-component"
+import YapbPagination from "../../components/pagination/pagination"
 
-import "./blog.css"
-
-class BlogList extends React.Component {
+class ProjectList extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -27,29 +25,27 @@ class BlogList extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
-        <div className="yapb-blog-list">
-          <CardColumns>
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
-              return (
-                <Link to={`blog${node.fields.slug}`}>
-                  <Card bg={cardBackground} text={cardTextColor}>
-                    <Card.Header as="h5">{title}</Card.Header>
-                    <Card.Body>
-                      <Card.Text>
-                        {node.frontmatter.description || node.excerpt}
-                      </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small>{node.frontmatter.date}</small>
-                    </Card.Footer>
-                  </Card>
-                </Link>
-              )
-            })}
-          </CardColumns>
-        </div>
-        <PaginationComponent
+        <CardColumns>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Link to={`project${node.fields.slug}`}>
+                <Card bg={cardBackground} text={cardTextColor}>
+                  <Card.Header as="h5">{title}</Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      {node.frontmatter.description || node.excerpt}
+                    </Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
+                    <small>{node.frontmatter.date}</small>
+                  </Card.Footer>
+                </Card>
+              </Link>
+            )
+          })}
+        </CardColumns>
+        <YapbPagination
           isFirst={isFirst}
           isLast={isLast}
           prevPage={prevPage}
@@ -57,16 +53,16 @@ class BlogList extends React.Component {
           numPages={numPages}
           currentPage={currentPage}
           layout={posts[0].node.frontmatter.layout}
-        ></PaginationComponent>
+        ></YapbPagination>
       </Layout>
     )
   }
 }
 
-export default BlogList
+export default ProjectList
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query projectPageQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -74,7 +70,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { layout: { eq: "blog" } } }
+      filter: { frontmatter: { layout: { eq: "project" } } }
       limit: $limit
       skip: $skip
     ) {
