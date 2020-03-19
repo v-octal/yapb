@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+
 import IconLink from "./footer-icon-link"
 
 import "./footer.css"
@@ -9,25 +11,42 @@ const Footer = styled.footer`
   margin: 24px;
 `
 
-const YapbFooter = () => (
-  <Footer className="yapb-footer">
-    <small className="text-muted mb-2">
-      <i className="fas fa-code"></i> with <i className="fas fa-heart"></i> by{" "}
-      <strong>Vikas Rajput</strong>
-    </small>
-    <div className="yapb-footer-links">
+const YapbFooter = () => {
+  const { pagesYaml } = useStaticQuery(
+    graphql`
+      query {
+        pagesYaml {
+          links {
+            color
+            fabIconClass
+            link
+            name
+          }
+        }
+      }
+    `
+  )
+  const footerLinks = pagesYaml.links
+
+  const items = footerLinks.map(row => {
+    return (
       <IconLink
-        hoverColor="rgb(29, 191, 242)"
-        fabIconClass="fab fa-twitter"
-        link="www.twitter.com/geekyjock"
+        hoverColor={row.color}
+        fabIconClass={row.fabIconClass}
+        link={row.link}
       ></IconLink>
-      <IconLink
-        hoverColor="#db4437"
-        fabIconClass="fas fa-envelope"
-        link="#"
-      ></IconLink>
-    </div>
-  </Footer>
-)
+    )
+  })
+
+  return (
+    <Footer className="yapb-footer">
+      <small className="text-muted mb-2">
+        <i className="fas fa-code"></i> with <i className="fas fa-heart"></i> by{" "}
+        <strong>Vikas Rajput</strong>
+      </small>
+      <div className="yapb-footer-links">{items}</div>
+    </Footer>
+  )
+}
 
 export default YapbFooter

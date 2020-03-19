@@ -10,12 +10,13 @@ collections:
     folder: content/blog
     create: true
     fields:
-      - { label: layout, name: layout, widget: hidden, default: "blog"}
+      - { label: layout, name: layout, widget: hidden, default: "blog" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: tags, label: Tags , widget: list}
+      - { name: tags, label: Tags, widget: list }
+      - { label: Photo, name: photo, widget: image }
       - { name: body, label: Body, widget: markdown }
 
   - name: project
@@ -23,11 +24,12 @@ collections:
     folder: content/project
     create: true
     fields:
-      - { label: layout, name: layout, widget: hidden, default: "project"}
+      - { label: layout, name: layout, widget: hidden, default: "project" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
-      - { name: tags, label: Tags , widget: list}
+      - { name: tags, label: Tags, widget: list }
+      - { label: Photo, name: photo, widget: image }
       - { name: body, label: Body, widget: markdown }
 
   - name: review
@@ -35,9 +37,56 @@ collections:
     folder: content/review
     create: true
     fields:
-      - { label: layout, name: layout, widget: hidden, default: "review"}
+      - { label: layout, name: layout, widget: hidden, default: "review" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
+      - { label: Photo, name: photo, widget: image }
       - { name: type, label: Type }
       - { name: body, label: Body, widget: markdown }
+
+  - label: Pages
+    name: pages
+    files:
+      - label: About
+        name: about
+        file: /content/pages/about.yml
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Nickname, name: nickname, widget: string }
+          - { label: "About Me", name: aboutMe, widget: markdown }
+          - { label: Quote, name: quote, widget: string }
+          - { label: Photo, name: photo, widget: image }
+          - label: Skills
+            name: skills
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Stars, name: stars, widget: number, min: 1, max: 5 }
+              - { label: Type, name: type, widget: string }
+      - label: "Footer Links"
+        name: footerLinks
+        file: content/pages/footer-links.yml
+        fields:
+        - label: Links
+          name: links
+          widget: list
+          fields:
+              - { label: Name, name: name, widget: string }
+              - {
+                  label: "On Hover Color",
+                  name: color,
+                  widget: string,
+                  pattern:
+                    [
+                      "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+                      "Must be a hex color code!"
+                    ]
+                }
+              - { label: Link, name: link, widget: string, pattern: [
+                      '^(http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$',
+                      "Must be a link(and start with http or https)!"
+                    ]
+                }
+              - { label: "Fab Icon Class", name: fabIconClass, widget: string }

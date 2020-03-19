@@ -1,0 +1,9 @@
+links:
+    - name: twitter
+      color: "#1da1f2"
+      link: "https://www.twitter.com/geekyJock"
+      fabIconClass: "fab fa-twitter"
+    - name: github
+      color: "#333333"
+      link: "https://www.github.com/geekyJock8"
+      fabIconClass: "fab fa-github"

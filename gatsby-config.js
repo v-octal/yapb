@@ -17,6 +17,14 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `pages`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
