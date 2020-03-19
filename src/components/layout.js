@@ -82,9 +82,4 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
-`
-
 export default Layout

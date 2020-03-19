@@ -35,3 +35,13 @@
 .yapb-content--full::after {
   content: none;
 }
+
+.yapb-footer-links {
+  justify-content: center !important;
+}
+
+.yapb-footer-links a {
+    text-decoration: none;
+    margin: 0.1em 0.25em;
+    box-shadow: none;
+}
