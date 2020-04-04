@@ -1,29 +1,28 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's personal blog starter
+<h1 >
+YAPB: Yet Another Portfolio Blog
 </h1>
 
 <img alt="screesnhot" src="./screenshot.png">
 
-This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
+**YAPB: Yet Another Portfolio Blog** is an opinionated minimalistic portfolio and blog. It's built on top of [gatsby-personal-starter-blog](https://github.com/thomaswang/gatsby-personal-starter-blog). As a result it comes with Netlify CMS integration. The blog can be customised according to your needs. 
+
+*So, go ahead and build your portfolio and write a world changing post.*
 
 ## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
+1. **Install Gatsby**
+    
+    For more instruction checkout Gatsby official [tutorial](https://www.gatsbyjs.org/tutorial/part-zero/).
+    ```sh
+    npm install -g gatsby-cli
+1.  **Create a Gatsby site**
 
     Use the Gatsby CLI to create a new site, specifying the blog starter.
 
     ```sh
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/thomaswang/gatsby-personal-starter-blog
+    gatsby new my-blog-starter https://github.com/geekyJock8/yapb
     ```
 
-1.  **Start developing.**
+1.  **Start developing**
 
     Navigate into your new site’s directory and start it up.
 
@@ -32,28 +31,31 @@ This starter is a fork of Gatsby Starter Blog, the most popular starter by far �
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+1.  **Your site is live!**
 
     Your site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `my-blog-starter` directory in your code editor of choice and start editing!
 
-## 🎓 Learning Gatsby
+    Check out the Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/).
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 📔 Learning Netlify CMS with Gatsby
+## 📔 Deploying your site with Netlify
 
 Start from [this point](https://www.gatsbyjs.org/docs/sourcing-from-netlify-cms/#authenticating-with-github) in the Gatsby documentation to finish the set up for your personal Netlify CMS with authentication.
 
-## 💫 Deploy
+## 📝 TODOs
+There are so many things left to do:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thomaswangio/gatsby-personal-starter-blog)
+1. Dark Mode
+1. Image Support for Cards
+1. Documentation
+1. Animation Effects
+1. Emailing List Support
+1. Card Colors
+1. Searching and Tagging
+1. Refactoring CSS
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+## 🤝 Contributions
+Feel free to help. There are no guidlines as of yet, but maybe you can help in buidling them.
