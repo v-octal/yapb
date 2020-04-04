@@ -1,9 +1,13 @@
 links:
-    - name: twitter
-      color: "#1da1f2"
-      link: "https://www.twitter.com/geekyJock"
-      fabIconClass: "fab fa-twitter"
-    - name: github
-      color: "#333333"
-      link: "https://www.github.com/geekyJock8"
-      fabIconClass: "fab fa-github"
+  - color: '#1da1f2'
+    fabIconClass: fab fa-twitter
+    link: 'https://www.twitter.com/geekyJock'
+    name: twitter
+  - color: '#333333'
+    fabIconClass: fab fa-github
+    link: 'https://www.github.com/geekyJock8'
+    name: github
+  - color: '#007bb5'
+    fabIconClass: fab fa-linkedin
+    link: 'https://www.linkedin.com/in/vikasrajput8'
+    name: linkedin
