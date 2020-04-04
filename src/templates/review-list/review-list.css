@@ -1,0 +1,14 @@
+.yapb-review-list {
+    margin: 20px 0 40px;
+  }
+  
+  a.yapb-review-list {
+    text-decoration: none;
+  }
+  
+  @media (min-width: 576px) {
+    .yapb-review-list .card-columns {
+      column-count: 4;
+    }
+  }
+  

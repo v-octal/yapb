@@ -24,27 +24,28 @@ class ProjectList extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
-        <CardColumns>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <Link to={`project${node.fields.slug}`}>
-                <Card bg={cardBackground} text={cardTextColor}>
-                  <Card.Header as="h5">{title}</Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      {node.frontmatter.description || node.excerpt}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small>{node.frontmatter.date}</small>
-                  </Card.Footer>
-                </Card>
-              </Link>
-            )
-          })}
-        </CardColumns>
+        <div className="yapb-project-list">
+          <CardColumns>
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <Link to={`project${node.fields.slug}`}>
+                  <Card bg={cardBackground} text={cardTextColor}>
+                    <Card.Header as="h5">{title}</Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        {node.frontmatter.description || node.excerpt}
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small>{node.frontmatter.date}</small>
+                    </Card.Footer>
+                  </Card>
+                </Link>
+              )
+            })}
+          </CardColumns>
+        </div>
         <YapbPagination
           isFirst={isFirst}
           isLast={isLast}

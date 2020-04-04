@@ -24,7 +24,6 @@ class ReviewList extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <div className="yapb-review-list">
           <CardColumns>
             {posts.map(({ node }) => {

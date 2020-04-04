@@ -38,8 +38,6 @@ class PostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
-
         <ul
           style={{
             display: `flex`,
@@ -51,14 +49,20 @@ class PostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={`${post.frontmatter.layout}${previous.fields.slug}`} rel="prev">
+              <Link
+                to={`${post.frontmatter.layout}${previous.fields.slug}`}
+                rel="prev"
+              >
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`${post.frontmatter.layout}${next.fields.slug}`} rel="next">
+              <Link
+                to={`${post.frontmatter.layout}${next.fields.slug}`}
+                rel="next"
+              >
                 {next.frontmatter.title} →
               </Link>
             )}

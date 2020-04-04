@@ -26,7 +26,6 @@ class BlogList extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <div className="yapb-blog-list">
           <CardColumns>
             {posts.map(({ node }) => {

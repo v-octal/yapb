@@ -6,6 +6,8 @@ import { rhythm, scale } from "../utils/typography"
 import YapbNavbar from "./navbar/navbar"
 import YapbFooter from "./footer/footer"
 
+import "./global.css"
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -13,48 +15,16 @@ class Layout extends React.Component {
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+    header = (
+      <h3
+        style={{
+          fontFamily: `Montserrat, sans-serif`,
+          marginTop: 0,
+        }}
+      >
+        {title}
+      </h3>
+    )
     return (
       <Wrapper className="flexbox-wrapper">
         <div className="yapb-content">

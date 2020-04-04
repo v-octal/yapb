@@ -1,0 +1,14 @@
+.yapb-project-list{
+    margin: 20px 0 40px;
+  }
+  
+  a.yapb-project-list {
+    text-decoration: none;
+  }
+  
+  @media (min-width: 576px) {
+    .yapb-project-list .card-columns {
+      column-count: 3;
+    }
+  }
+  
