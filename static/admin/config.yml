@@ -16,8 +16,8 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: tags, label: Tags, widget: list }
-      - { label: Photo, name: photo, widget: image }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
       - { name: body, label: Body, widget: markdown }
 
   - name: project
@@ -29,8 +29,8 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
-      - { name: tags, label: Tags, widget: list }
-      - { label: Photo, name: photo, widget: image }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
       - { name: body, label: Body, widget: markdown }
 
   - name: review
@@ -42,7 +42,7 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: name, label: Name }
-      - { label: Photo, name: photo, widget: image }
+      - { label: Photo, name: photo, widget: image, required: false }
       - { name: type, label: Type }
       - { name: body, label: Body, widget: markdown }
 
@@ -54,7 +54,7 @@ collections:
         file: /content/pages/about.yml
         fields:
           - { label: Name, name: name, widget: string }
-          - { label: Nickname, name: nickname, widget: string }
+          - { label: Nickname, name: nickname, widget: string, required: false }
           - { label: "About Me", name: aboutMe, widget: text }
           - { label: Quote, name: quote, widget: string }
           - { label: Photo, name: photo, widget: image }
