@@ -1,11 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Button from "../components/button"
 import FullDescription from "../components/full-description/full-description"
 
 import "../pages-styles/index.css"

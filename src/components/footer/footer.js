@@ -42,7 +42,7 @@ const YapbFooter = () => {
     <Footer className="yapb-footer">
       <small className="text-muted mb-2">
         <i className="fas fa-code"></i> with <i className="fas fa-heart"></i> by{" "}
-        <strong>Vikas Rajput</strong>
+        <strong>geekyJock</strong>
       </small>
       <div className="yapb-footer-links">{items}</div>
     </Footer>

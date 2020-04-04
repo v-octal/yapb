@@ -1,7 +1,5 @@
 import React from "react"
-import styled from "styled-components"
-import { Container, Row, Card, CardColumns } from "react-bootstrap"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Row, Card, CardColumns } from "react-bootstrap"
 
 import "./full-description.css"
 

@@ -1,8 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import YapbNavbar from "./navbar/navbar"
 import YapbFooter from "./footer/footer"
 
@@ -10,9 +9,8 @@ import "./global.css"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
+    const {  title, children } = this.props
+
     let header
 
     header = (

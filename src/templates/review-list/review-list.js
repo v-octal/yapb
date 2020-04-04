@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import { Card, CardColumns } from "react-bootstrap"
 
 import SEO from "../../components/seo"
-import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import YapbPagination from "../../components/pagination/pagination"
 
