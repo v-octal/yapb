@@ -1,0 +1,35 @@
+.grid-elem-centering {
+  margin: auto;
+}
+
+.vertical-row-padding {
+  padding-bottom: 2.5em;
+}
+
+#brief-info {
+  max-width: 60em;
+}
+
+#quote {
+  text-align: center;
+  font-family: Impact;
+  margin: 1em auto;
+}
+
+#full-description {
+  padding-top: 5em;
+}
+
+#scroll-down-button {
+  margin-top: 4.5em;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  #scroll-down-button {
+    margin-top: 1.5em;
+  }
+
+  .vertical-row-padding {
+    padding-bottom: 1em;
+  }
+}

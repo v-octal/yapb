@@ -54,7 +54,7 @@ collections:
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Nickname, name: nickname, widget: string }
-          - { label: "About Me", name: aboutMe, widget: markdown }
+          - { label: "About Me", name: aboutMe, widget: text }
           - { label: Quote, name: quote, widget: string }
           - { label: Photo, name: photo, widget: image }
           - label: Skills
@@ -63,8 +63,6 @@ collections:
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Description, name: description, widget: text }
-              - { label: Stars, name: stars, widget: number, min: 1, max: 5 }
-              - { label: Type, name: type, widget: string }
       - label: "Footer Links"
         name: footerLinks
         file: content/pages/footer-links.yml

@@ -1,0 +1,9 @@
+.yapb-skill-list .card-columns {
+  column-count: 1;
+}
+
+.full-description-row-elem {
+    margin: auto;
+    padding: 1em;
+    text-align: justify;
+}

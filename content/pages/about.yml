@@ -1,0 +1,18 @@
+- name: Vikas Rajput
+  nickname: geekyJock
+  aboutMe: "A brief detailed description about me. Quo necessitatibus commodi. 
+  Minus iusto non et ea et odio voluptatibus ea. Perferendis voluptatem nostrum et sapiente.Error minus non at pariatur rem. Molestias qui ut veritatis harum odio qui laboriosam doloremque a. Maiores aliquid voluptas quis asperiores occaecati officia. 
+  Excepturi asperiores culpa in. Vel et voluptas atque quis sequi. Et impedit provident delectus quidem iste et aliquam. Et sequi animi.
+  Vel occaecati iure saepe iure rem laudantium possimus mollitia voluptas. Vitae aliquam quidem beatae nihil eos debitis. Quam ut veritatis adipisci. Ex assumenda eveniet labore qui mollitia ea.Et repudiandae quo consequatur quas tempora quia sed fugiat.
+  consequatur-sit-qui Ipsum recusandae sapiente provident temporibus aut eligendi quo ducimus.
+  <br/>
+  Illo earum ab. Perspiciatis iure illo. Fugit et voluptas dolorem commodi porro. Sapiente inventore nam ut. Ullam non quia est. Natus reiciendis temporibus consequatur quia vitae. Voluptas eius ut corrupti ut aut occaecati voluptatem vel voluptas.
+  Sint non illo quo officia tenetur suscipit consequuntur est consequatur. Inventore totam provident. Maxime nostrum non aut fuga assumenda et incidunt."
+  quote: A very creative quote that defines me!
+  photo: './GatsbyScene.svg'
+  skills:
+    - name: Breathing
+      description: Professional in breathing, can breath 24X7, 365 days a year.
+    - name: Sleeping    
+      description: Professional in sleeping, can fall asleep in less than 15 minutes.
+
