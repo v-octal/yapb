@@ -21,16 +21,16 @@ class IndexPage extends React.Component {
         />
 
         <Container>
-          <Row className="vertical-row-padding">
+          <Row className="vertical-row-padding" id="index-quote">
             <h1 className="grid-elem-centering" id="quote">"{aboutYaml.quote}"</h1>
           </Row>
           <Row md={1} lg={2} className="grid-elem-centering vertical-row-padding" id="brief-info">
             <Col md className="grid-elem-centering">
-              <img src={aboutYaml.photo} alt="Gatsby Scene" />
+              <img src={aboutYaml.photo} alt="Profile" />
             </Col>
             <Col md className="grid-elem-centering">
-              <h2>
-                Hey people{" "}
+              <h2 id="index-greetings">
+                Hello there{" "}
                 <span role="img" aria-label="wave emoji">
                   👋
                 </span>

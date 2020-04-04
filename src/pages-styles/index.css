@@ -24,12 +24,24 @@
   margin-top: 4.5em;
 }
 
+#index-greetings {
+  text-align: end;
+}
+
 @media (min-width: 0px) and (max-width: 767px) {
   #scroll-down-button {
     margin-top: 1.5em;
   }
 
   .vertical-row-padding {
-    padding-bottom: 1em;
+    padding-bottom: 1.8em;
+  }
+
+  #index-greetings {
+    text-align: center;
+  }
+
+  #index-quote{
+    margin-top: -4em;
   }
 }
