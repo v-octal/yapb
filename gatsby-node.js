@@ -85,15 +85,15 @@ exports.createPages = ({ graphql, actions }) => {
 
       const layoutMapping = {
         blog: {
-          postsPerPage: 6,
+          postsPerPage: 8,
           component: "./src/templates/blog-list/blog-list.js",
         },
         project: {
-          postsPerPage: 8,
+          postsPerPage: 12,
           component: "./src/templates/project-list/project-list.js",
         },
         review: {
-          postsPerPage: 12,
+          postsPerPage: 16,
           component: "./src/templates/review-list/review-list.js",
         },
       }
