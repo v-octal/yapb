@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
                 frontmatter {
                   layout
                   title
+                  externalUrl
                 }
                 fields {
                   slug
@@ -38,21 +39,48 @@ exports.createPages = ({ graphql, actions }) => {
 
     groups.forEach(group => {
       posts = group.edges
-      posts.forEach((post, index) => {
-        const previous =
-          index === posts.length - 1 ? null : posts[index + 1].node
-        const next = index === 0 ? null : posts[index - 1].node
 
-        createPage({
-          path: `${post.node.frontmatter.layout}${post.node.fields.slug}`,
-          component: postLayout,
-          context: {
-            slug: post.node.fields.slug,
-            layout: post.node.frontmatter.layout,
-            previous,
-            next,
-          },
-        })
+      const previous = []
+      const next = []
+
+      let currNext = -1
+      for (let index = 0; index < posts.length; index++) {
+        if (!posts[index].node.frontmatter.externalUrl) {
+          next.push(currNext)
+          currNext = index
+        } else {
+          next.push(-1)
+        }
+      }
+
+      let currPrevious = -1
+      for (let index = posts.length - 1; index >= 0; index--) {
+        if (!posts[index].node.frontmatter.externalUrl) {
+          previous.push(currPrevious)
+          currPrevious = index
+        } else {
+          previous.push(-1)
+        }
+      }
+
+      previous.reverse()
+
+      posts.forEach((post, index) => {
+        if (!post.node.frontmatter.externalUrl) {
+          const nextNode = next[index] >= 0 ? posts[next[index]].node : null
+          const prevNode =
+            previous[index] >= 0 ? posts[previous[index]].node : null
+          createPage({
+            path: `${post.node.frontmatter.layout}${post.node.fields.slug}`,
+            component: postLayout,
+            context: {
+              slug: post.node.fields.slug,
+              layout: post.node.frontmatter.layout,
+              previous: prevNode,
+              next: nextNode,
+            },
+          })
+        }
       })
 
       const layoutMapping = {

@@ -18,7 +18,18 @@ collections:
       - { name: description, label: Description }
       - { name: tags, label: Tags, widget: list, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - {
+        name: externalUrl,
+        label: Link,
+        widget: string,
+        pattern:
+          [
+            '^(http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$',
+            "Must be a link(and start with http or https)!",
+          ],
+        required: false,
+      }
+      - { name: body, label: Body, widget: markdown, required: false}
 
   - name: project
     label: Project
@@ -28,10 +39,21 @@ collections:
       - { label: layout, name: layout, widget: hidden, default: "project" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
+      - {
+          name: externalUrl,
+          label: Link,
+          widget: string,
+          pattern:
+            [
+              '^(http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$',
+              "Must be a link(and start with http or https)!",
+            ],
+          required: false,
+        }
       - { name: name, label: Name }
       - { name: tags, label: Tags, widget: list, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - { name: body, label: Body, widget: markdown, required: false }
 
   - name: review
     label: Review
@@ -44,7 +66,18 @@ collections:
       - { name: name, label: Name }
       - { label: Photo, name: photo, widget: image, required: false }
       - { name: type, label: Type }
-      - { name: body, label: Body, widget: markdown }
+      - {
+        name: externalUrl,
+        label: Link,
+        widget: string,
+        pattern:
+          [
+            '^(http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$',
+            "Must be a link(and start with http or https)!",
+          ],
+        required: false,
+      }
+      - { name: body, label: Body, widget: markdown, required: false }
 
   - label: Pages
     name: pages
@@ -68,10 +101,10 @@ collections:
         name: footerLinks
         file: content/pages/footer-links.yml
         fields:
-        - label: Links
-          name: links
-          widget: list
-          fields:
+          - label: Links
+            name: links
+            widget: list
+            fields:
               - { label: Name, name: name, widget: string }
               - {
                   label: "On Hover Color",
@@ -80,12 +113,17 @@ collections:
                   pattern:
                     [
                       "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-                      "Must be a hex color code!"
-                    ]
+                      "Must be a hex color code!",
+                    ],
                 }
-              - { label: Link, name: link, widget: string, pattern: [
+              - {
+                  label: Link,
+                  name: link,
+                  widget: string,
+                  pattern:
+                    [
                       '^(http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$',
-                      "Must be a link(and start with http or https)!"
-                    ]
+                      "Must be a link(and start with http or https)!",
+                    ],
                 }
               - { label: "Fab Icon Class", name: fabIconClass, widget: string }

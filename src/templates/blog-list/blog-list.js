@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { Card, CardColumns } from "react-bootstrap"
+import { graphql } from "gatsby"
+import { CardColumns } from "react-bootstrap"
 
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
 import YapbPagination from "../../components/pagination/pagination"
+import YapbCard from "../../components/card/card"
 
 import "./blog.css"
 
@@ -30,19 +31,16 @@ class BlogList extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <Link to={`blog${node.fields.slug}`}>
-                  <Card bg={cardBackground} text={cardTextColor}>
-                    <Card.Header as="h5">{title}</Card.Header>
-                    <Card.Body>
-                      <Card.Text>
-                        {node.frontmatter.description || node.excerpt}
-                      </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small>{node.frontmatter.date}</small>
-                    </Card.Footer>
-                  </Card>
-                </Link>
+                <YapbCard
+                  externalUrl={node.frontmatter.externalUrl}
+                  link={`blog${node.fields.slug}`}
+                  cardBackground={cardBackground}
+                  cardTextColor={cardTextColor}
+                  title={title}
+                  description={node.frontmatter.description}
+                  excerpt={node.excerpt}
+                  date={node.frontmatter.date}
+                ></YapbCard>
               )
             })}
           </CardColumns>
@@ -87,6 +85,7 @@ export const pageQuery = graphql`
             title
             description
             layout
+            externalUrl
           }
         }
       }
