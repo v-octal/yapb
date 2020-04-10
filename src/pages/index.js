@@ -20,29 +20,40 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <Container>
-          <Row className="vertical-row-padding" id="index-quote">
-            <h1 className="grid-elem-centering" id="quote">"{aboutYaml.quote}"</h1>
-          </Row>
-          <Row md={1} lg={2} className="grid-elem-centering vertical-row-padding" id="brief-info">
-            <Col md className="grid-elem-centering">
-              <img src={aboutYaml.photo} alt="Profile" />
-            </Col>
-            <Col md className="grid-elem-centering">
-              <h2 id="index-greetings">
-                Hello there{" "}
-                <span role="img" aria-label="wave emoji">
-                  👋
-                </span>
-                <p>I'm {aboutYaml.nickname || aboutYaml.name}!</p>
-              </h2>
-            </Col>
-          </Row>
-          <Row className="vertical-row-padding" id="scroll-down-button">
+        <div id="landing-screen">
+          <div id="index-quote">
+            <h1 className="grid-elem-centering" id="quote">
+              "{aboutYaml.quote}"
+            </h1>
+          </div>
+          <Container>
+            <Row
+              md={1}
+              lg={2}
+              className="grid-elem-centering"
+              id="brief-info"
+            >
+              <Col md className="grid-elem-centering">
+                <img id="profile-image" src={aboutYaml.photo} alt="Profile" />
+              </Col>
+              <Col md className="grid-elem-centering">
+                <h2 id="index-greetings">
+                  Hello there{" "}
+                  <span role="img" aria-label="wave emoji">
+                    👋
+                  </span>
+                  <p>I'm {aboutYaml.nickname || aboutYaml.name}!</p>
+                </h2>
+              </Col>
+            </Row>
+          </Container>
+          <div id="scroll-down-button">
             <Link to="/#full-description" className="grid-elem-centering">
               <i class="fas fa-chevron-circle-down fa-2x"></i>
             </Link>
-          </Row>
+          </div>
+        </div>
+        <Container>
           <div id="full-description">
             <FullDescription
               aboutMe={aboutYaml.aboutMe}

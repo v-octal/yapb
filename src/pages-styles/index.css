@@ -1,5 +1,6 @@
 .grid-elem-centering {
   margin: auto;
+  text-align: center;
 }
 
 .vertical-row-padding {
@@ -21,11 +22,20 @@
 }
 
 #scroll-down-button {
-  margin-top: 4.5em;
+  margin-top: 6em;
+  text-align: center;
 }
 
 #index-greetings {
   text-align: end;
+}
+
+#landing-screen {
+  height: 100vh;
+}
+
+#profile-image {
+  max-height: 40vh;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
@@ -41,7 +51,7 @@
     text-align: center;
   }
 
-  #index-quote{
+  #index-quote {
     margin-top: -4em;
   }
 }
