@@ -6,10 +6,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./navbar.css"
 
 const YapbNavbar = () => {
-  const { aboutYaml } = useStaticQuery(
+  const { pagesYaml } = useStaticQuery(
     graphql`
       query {
-        aboutYaml {
+        pagesYaml {
           name
           nickname
         }
@@ -25,7 +25,7 @@ const YapbNavbar = () => {
       className="yapb-navbar"
     >
       <Link to="/" className="yapb-navbar-element">
-        {aboutYaml.nickname || aboutYaml.name}
+        {pagesYaml.nickname || pagesYaml.name}
       </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

@@ -11,7 +11,7 @@ import "../pages-styles/index.css"
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const aboutYaml = data.aboutYaml
+    const aboutYaml = data.pagesYaml
 
     return (
       <Layout location={this.props.location}>
@@ -59,7 +59,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    aboutYaml {
+    pagesYaml {
       name
       nickname
       quote

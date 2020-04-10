@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: geekyJock8/yapb
+  name: test-repo
 
 media_folder: static/assets
 public_folder: assets
@@ -15,7 +14,7 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description }
+      - { name: description, label: Description, required: false }
       - { name: tags, label: Tags, widget: list, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
       - {
@@ -39,6 +38,7 @@ collections:
       - { label: layout, name: layout, widget: hidden, default: "project" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
+      - { name: description, label: Description, required: false }
       - {
           name: externalUrl,
           label: Link,
@@ -50,7 +50,7 @@ collections:
             ],
           required: false,
         }
-      - { name: name, label: Name }
+      - { name: title, label: Title }
       - { name: tags, label: Tags, widget: list, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
       - { name: body, label: Body, widget: markdown, required: false }
@@ -63,7 +63,8 @@ collections:
       - { label: layout, name: layout, widget: hidden, default: "review" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: name, label: Name }
+      - { name: title, label: Title }
+      - { name: description, label: Description, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
       - { name: type, label: Type }
       - {
@@ -97,10 +98,6 @@ collections:
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Description, name: description, widget: text }
-      - label: "Footer Links"
-        name: footerLinks
-        file: content/pages/footer-links.yml
-        fields:
           - label: Links
             name: links
             widget: list
