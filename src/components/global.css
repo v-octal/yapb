@@ -6,3 +6,16 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+/* gatsby-remark-images only supports png and jpg, use this class in your MD/MDX files.
+Wrap your image around p tag and give it this class in your MD/MDX.
+e.g. - 
+<p class="mdx-image-style">
+  <img src="path-to-image" />
+</p>
+
+You can also add your custom styles here!
+*/
+.mdx-image-style {
+  text-align: center;
+}
